@@ -191,5 +191,20 @@ Arduino:
 
 ## Vídeo e detalhamento
 
-\\texto\\
+[Link do vídeo mostrando o projeto](https://youtube.com/shorts/il4gO5-YKGo?is=HdYry4UqaUWrtvBF)
+
+
+* O nosso projeto se trata da simulação do sensor de ré de um carro utilizando uma placa arduino UNO. Para isso, os principais componentes foram: um sensor ultrassônico HC-SR04, um buzzer ativo e 3 leds 5mm, sendo 1 verde e 2 vermelhos. A função de cada peça é:
+
+### Sensor HC-SR04:
+
+O sensor é, como o coração do sistema, a peça que usa ondas sonoras para medir a distância até algum objeto na direção que ele aponta. O software do sensor de ré reside basicamente em programar para quais distâncias do sensor os leds acendem e o buzzer apita.
+
+### Buzzer ativo:
+
+O buzzer é a parte que adere mais realidade e aplicabilidade ao projeto. Ele serve para gerar um apito períodico que torna usável o sensor de ré mesmo que não esteja olhando-o. O buzzer, como citado, é ativo, o que significa que você pode configurar a frequência do barulho, mas somente isso. Em contraste, em um buzzer passivo seria possível configurar, no código, o tom e a nota musical do barulho, que, como não mudaria nada no nosso projeto, não foi usado.
+
+### LED's coloridos:
+
+Os leds foram usados para aderir sentido visual ao projeto. O led verde acende quando o objeto está a distância satisfatória do sensor. Os dois leds vermelhos acendem (não simultaneamente) conforme se aproxima o objeto do sensor. A cada led foi aderido um resistor para controlar a energia e evitar que o led queime.
 
