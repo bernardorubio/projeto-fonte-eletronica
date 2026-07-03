@@ -1,4 +1,6 @@
-# projeto-fonte-eletronica
+# Projetos Eletrônica SCC-0180
+
+# Fonte de Tensão
 
 ## Descrição 
 
@@ -102,3 +104,90 @@ P_{\text{transistor}} &= (V_{2,\text{pico}} - V_{\text{out}}) \cdot I_{\text{car
   \approx (32{,}7 - 12{,}3)\cdot 0{,}102 \approx 2{,}1\ \text{W}
 \end{aligned}
 $$
+
+
+
+
+
+
+# Arduino: Sensor de ré 
+
+## Código do projeto
+
+'int trigPin = 3; // sensor ultrassônico
+int echoPin = 4; // sensor ultrassônico
+int ledPin1 = 8;   // mais longe(VERDE)
+int ledPin2 = 9;
+int ledPin3 = 10;  // mais perto
+int buzzerPin = 11;
+
+long int duracao;
+long distancia;
+
+void setup() {
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  pinMode(ledPin1, OUTPUT);
+  pinMode(ledPin3, OUTPUT);
+  pinMode(buzzerPin, OUTPUT);
+}
+
+void loop() {
+  // disparar sensor ultrassônico
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+
+  duracao = pulseIn(echoPin, HIGH);
+  distancia = (duracao / 2) / 29.1;
+
+  // leitura inválida ou muito longe
+  if (distancia <= 0 || distancia > 24) {
+    digitalWrite(ledPin1, LOW);
+    digitalWrite(ledPin2, LOW);
+    digitalWrite(ledPin3, LOW);
+  }
+  else if (distancia <= 8) {
+    digitalWrite(ledPin1, HIGH);
+    digitalWrite(ledPin2, HIGH);
+    digitalWrite(ledPin3, HIGH);
+   }
+  else if (distancia <= 16) {
+    digitalWrite(ledPin1, HIGH);
+    digitalWrite(ledPin2, HIGH);
+    digitalWrite(ledPin3, LOW);
+  }
+  else if (distancia <= 24) {
+    digitalWrite(ledPin1, HIGH);
+    digitalWrite(ledPin2, LOW);
+    digitalWrite(ledPin3, LOW);
+  }
+
+  if (distancia > 0 && distancia <= 24){
+    int tempoBipe = map(distancia, 2, 24, 40, 350);
+    tempoBipe = constrain(tempoBipe,40, 350);
+
+    // executa o bipe
+    digitalWrite(buzzerPin, HIGH);
+    delay(30);
+    digitalWrite(buzzerPin, LOW);
+    delay(tempoBipe);
+  }
+  else {
+    digitalWrite(buzzerPin, LOW);
+  }
+  
+}'
+
+## Representação do Circuito
+
+Arduino:
+
+
+
+## Vídeo e detalhamento
+
+\\texto\\
+
