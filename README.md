@@ -114,7 +114,8 @@ $$
 
 ## Código do projeto
 
-'int trigPin = 3; // sensor ultrassônico
+```
+int trigPin = 3; // sensor ultrassônico
 int echoPin = 4; // sensor ultrassônico
 int ledPin1 = 8;   // mais longe(VERDE)
 int ledPin2 = 9;
@@ -179,7 +180,8 @@ void loop() {
     digitalWrite(buzzerPin, LOW);
   }
   
-}'
+}
+```
 
 ## Representação do Circuito
 
