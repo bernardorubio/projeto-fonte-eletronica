@@ -187,6 +187,12 @@ void loop() {
 
 Arduino:
 
+[Link do Tinkercad](https://www.tinkercad.com/things/ikYwCkWObOp/editel?sharecode=S7vL63AE8OZHP9Pdluilta0DE_7cx5uiFOOEw9eESOQ)
+
+Imagem do Tinkercad:
+
+<img width="1366" height="540" alt="Untitled" src="https://github.com/user-attachments/assets/6e57ba73-88f7-4e7c-9943-03b365fcf900" />
+
 
 
 ## Vídeo e detalhamento
